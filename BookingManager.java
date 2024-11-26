@@ -9,19 +9,14 @@ public class BookingManager {
     public BookingManager() {
         bookings = loadBookings();
     }
-
+ //luqman
     public void createBooking(String customerId, String customerName, String time, double amount, boolean isMemberDiscountApplied, boolean isPaymentSuccessful) {
         Booking booking = new Booking(customerId, customerName, time, amount, isMemberDiscountApplied, isPaymentSuccessful);
         bookings.add(booking);
         saveBookings();
     }
-
-    public void displayBookings() {
-        for (Booking booking : bookings) {
-            System.out.println(booking);
-        }
-    }
-
+ //luqman
+ 
     private void saveBookings() {
         try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(FILE_NAME))) {
             oos.writeObject(bookings);
