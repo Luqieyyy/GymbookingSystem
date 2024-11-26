@@ -1,0 +1,25 @@
+import java.io.Serializable;
+
+public class Booking implements Serializable {
+    private String customerId;
+    private String customerName;
+    private String time; // Now a String
+    private double amount;
+    private String isMemberDiscountApplied;
+    private String isPaymentSuccessful;
+
+    // Adjusted constructor with time as a String instead of Date
+    public Booking(String customerId, String customerName, String time, double amount, boolean isMemberDiscountApplied, boolean isPaymentSuccessful) {
+        this.customerId = customerId;
+        this.customerName = customerName;
+        this.time = time;
+        this.amount = amount;
+        this.isMemberDiscountApplied = isMemberDiscountApplied ? "Yes" : "No";
+        this.isPaymentSuccessful = isPaymentSuccessful ? "Yes" : "No";
+    }
+
+    @Override
+    public String toString() {
+        return customerName + "," + isMemberDiscountApplied + "," + isPaymentSuccessful + "," + time + "," + amount;
+    }
+}
